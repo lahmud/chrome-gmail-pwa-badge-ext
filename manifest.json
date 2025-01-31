@@ -1,0 +1,23 @@
+{
+  "name": "Gmail PWA Unread Badge",
+  "description": "Shows a badge on the Gmail PWA icon with the number of unread emails.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "*://mail.google.com/*",
+    "*://gmail.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://mail.google.com/*",
+        "*://gmail.com/*"
+      ],
+      "js": ["setBadge.js"]
+    }
+  ],
+  "action": {
+    "default_icon": "badge.png"
+  }
+}
